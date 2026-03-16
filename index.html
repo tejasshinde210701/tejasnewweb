@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Tejas Shinde — Web Developer & Digital Marketing Executive</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@400;500;700;800;900&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"/>
+<style>
+:root{
+  --bg:#06091a;--bg2:#080c20;--bg3:#0d1230;
+  --card:rgba(255,255,255,.032);--bdr:rgba(255,255,255,.075);--bdr-h:rgba(34,211,238,.4);
+  --cyan:#22d3ee;--vio:#a78bfa;--rose:#fb7185;--amb:#fbbf24;--emer:#34d399;--blue:#60a5fa;
+  --text:#f0f4ff;--muted:#8896b3;
+  --g1:linear-gradient(135deg,#22d3ee,#a78bfa);
+  --g2:linear-gradient(135deg,#fb7185,#f97316);
+  --g3:linear-gradient(135deg,#34d399,#22d3ee);
+  --g4:linear-gradient(135deg,#a78bfa,#ec4899);
+  --g5:linear-gradient(135deg,#fbbf24,#f97316);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;line-height:1.65}
+h1,h2,h3,h4{font-family:'Cabinet Grotesk',sans-serif}
+::-webkit-scrollbar{width:4px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--cyan);border-radius:2px}
+
+/* NAV */
+nav{position:fixed;top:0;width:100%;z-index:1000;padding:.9rem 2rem;display:flex;align-items:center;justify-content:space-between;background:rgba(6,9,26,.82);backdrop-filter:blur(24px);border-bottom:1px solid var(--bdr);transition:.3s}
+.logo{font-family:'Cabinet Grotesk',sans-serif;font-weight:900;font-size:1.5rem;background:var(--g1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;text-decoration:none;letter-spacing:-.02em}
+.nav-links{display:flex;gap:1.8rem;list-style:none}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:.88rem;font-weight:500;letter-spacing:.04em;transition:color .3s;position:relative}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--g1);transition:width .3s;border-radius:1px}
+.nav-links a:hover{color:var(--text)}.nav-links a:hover::after{width:100%}
+.nav-hire{background:var(--g1);color:#fff!important;padding:.42rem 1.2rem;border-radius:50px;font-size:.82rem!important;font-weight:600!important;-webkit-text-fill-color:#fff!important;transition:opacity .3s,transform .3s!important}
+.nav-hire:hover{opacity:.82;transform:scale(1.06)}.nav-hire::after{display:none!important}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer}.hamburger span{width:24px;height:2px;background:var(--text);border-radius:2px;transition:.3s}
+
+/* HERO */
+#hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:7rem 2rem 4rem;position:relative;overflow:hidden;
+background:radial-gradient(ellipse 900px 600px at 20% 50%,rgba(34,211,238,.09) 0%,transparent 60%),radial-gradient(ellipse 700px 700px at 80% 20%,rgba(167,139,250,.1) 0%,transparent 60%),radial-gradient(ellipse 500px 500px at 60% 80%,rgba(251,113,133,.07) 0%,transparent 60%),var(--bg)}
+#pcvs{position:absolute;inset:0;z-index:0}
+.hc{position:relative;z-index:2;max-width:900px;text-align:center}
+.hpill{display:inline-flex;align-items:center;gap:.55rem;background:rgba(34,211,238,.08);border:1px solid rgba(34,211,238,.2);padding:.38rem 1rem;border-radius:50px;font-size:.78rem;color:var(--cyan);letter-spacing:.1em;text-transform:uppercase;font-weight:600;margin-bottom:2rem;animation:fD .8s ease both}
+.ldot{width:7px;height:7px;border-radius:50%;background:var(--emer);animation:blink 1.6s infinite;box-shadow:0 0 8px var(--emer)}
+@keyframes blink{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.8)}}
+@keyframes fD{from{opacity:0;transform:translateY(-16px)}to{opacity:1;transform:none}}
+@keyframes fU{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.hh1{font-size:clamp(3rem,7.5vw,6rem);font-weight:900;line-height:1.02;letter-spacing:-.03em;margin-bottom:.8rem;animation:fU .9s .18s ease both}
+.hh1 .gc1{background:var(--g1);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hh1 .gc4{background:var(--g4);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.htype{font-size:clamp(1.1rem,2.8vw,1.65rem);font-weight:600;color:var(--cyan);min-height:2rem;margin-bottom:1.4rem;animation:fU .9s .32s ease both}
+.cur{display:inline-block;width:3px;height:1em;background:var(--cyan);margin-left:2px;vertical-align:middle;animation:blink 1s infinite}
+.hsub{font-size:1.05rem;color:var(--muted);max-width:600px;margin:0 auto 2.4rem;animation:fU .9s .44s ease both}
+.hbtns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;animation:fU .9s .58s ease both}
+.bglow{background:var(--g1);color:#fff;padding:.82rem 2.2rem;border-radius:50px;text-decoration:none;font-weight:700;font-size:.95rem;box-shadow:0 4px 28px rgba(34,211,238,.32);transition:transform .3s,box-shadow .3s}
+.bglow:hover{transform:translateY(-4px);box-shadow:0 10px 40px rgba(34,211,238,.5)}
+.bgh{border:1.5px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);color:var(--text);padding:.82rem 2.2rem;border-radius:50px;text-decoration:none;font-weight:600;font-size:.95rem;backdrop-filter:blur(10px);transition:border-color .3s,transform .3s,background .3s}
+.bgh:hover{border-color:var(--cyan);background:rgba(34,211,238,.08);transform:translateY(-4px)}
+.hstats{display:flex;gap:2.5rem;justify-content:center;flex-wrap:wrap;margin-top:3.5rem;padding-top:2.5rem;border-top:1px solid var(--bdr);animation:fU .9s .72s ease both}
+.hsn{font-family:'Cabinet Grotesk',sans-serif;font-size:1.8rem;font-weight:900;background:var(--g1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:block}
+.hsl{font-size:.78rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em}
+
+/* COMMONS */
+section{padding:6rem 2rem}
+.ctn{max-width:1200px;margin:0 auto}
+.eye{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--cyan);font-weight:700;margin-bottom:.5rem;display:inline-block}
+.sech{font-size:clamp(2rem,4.2vw,3.2rem);font-weight:900;line-height:1.1;letter-spacing:-.025em;margin-bottom:.9rem}
+.secp{color:var(--muted);max-width:550px;font-size:.98rem}
+.bar{width:56px;height:3px;border-radius:2px;margin:1rem 0 3rem}
+.bc{background:var(--g1)}.br{background:var(--g2)}.bg{background:var(--g3)}.bp{background:var(--g4)}
+
+/* glass */
+.gc{background:var(--card);border:1px solid var(--bdr);border-radius:22px;backdrop-filter:blur(14px);transition:transform .35s,border-color .35s,box-shadow .35s}
+.gc:hover{transform:translateY(-7px);border-color:rgba(34,211,238,.3);box-shadow:0 24px 60px rgba(0,0,0,.5)}
+
+/* ABOUT */
+#about{background:radial-gradient(ellipse 700px 400px at 100% 50%,rgba(167,139,250,.07) 0%,transparent 60%),var(--bg2)}
+.agrid{display:grid;grid-template-columns:420px 1fr;gap:4.5rem;align-items:start}
+.aphoto{border-radius:28px;overflow:hidden;aspect-ratio:4/5;position:relative;background:linear-gradient(145deg,#0d1a3a,#111835);border:1px solid var(--bdr);box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.aphoto-in{width:100%;height:100%;background:radial-gradient(circle at 35% 30%,rgba(34,211,238,.18) 0%,transparent 50%),radial-gradient(circle at 70% 70%,rgba(167,139,250,.2) 0%,transparent 50%),linear-gradient(145deg,#0d1a3a,#0a0f25);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;position:relative}
+.aphoto-in::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='rgba(34,211,238,.04)' stroke-width='1'%3E%3Ccircle cx='30' cy='30' r='28'/%3E%3Ccircle cx='30' cy='30' r='20'/%3E%3Ccircle cx='30' cy='30' r='12'/%3E%3C/g%3E%3C/svg%3E") repeat}
+.aav{width:110px;height:110px;border-radius:50%;background:var(--g1);display:flex;align-items:center;justify-content:center;font-family:'Cabinet Grotesk',sans-serif;font-size:2.6rem;font-weight:900;color:#fff;position:relative;z-index:1;box-shadow:0 0 0 8px rgba(34,211,238,.12),0 0 0 16px rgba(34,211,238,.06)}
+.anb{text-align:center;position:relative;z-index:1}.anm{font-family:'Cabinet Grotesk',sans-serif;font-weight:800;font-size:1.25rem}.aro{color:var(--cyan);font-size:.82rem;margin-top:.25rem}
+.abadges{display:flex;gap:.5rem;flex-wrap:wrap;justify-content:center;padding:0 1.5rem;position:relative;z-index:1}
+.abadge{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:50px;padding:.3rem .85rem;font-size:.72rem;color:var(--muted)}
+.axp{position:absolute;bottom:20px;right:-18px;background:var(--g1);color:#fff;padding:1.1rem 1.4rem;border-radius:18px;font-family:'Cabinet Grotesk',sans-serif;font-weight:900;font-size:1.3rem;line-height:1.1;box-shadow:0 12px 40px rgba(34,211,238,.4);z-index:10}
+.axp small{display:block;font-size:.65rem;font-weight:500;opacity:.8;margin-top:2px}
+.ap{color:var(--muted);margin-bottom:1.1rem;font-size:.98rem}
+.ahl{background:rgba(34,211,238,.06);border-left:3px solid var(--cyan);padding:1rem 1.2rem;border-radius:0 12px 12px 0;margin:1.5rem 0;font-size:.95rem;color:var(--text);font-style:italic}
+.spills{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.5rem}
+.sp{display:inline-flex;align-items:center;gap:.45rem;padding:.4rem 1rem;border-radius:50px;font-size:.8rem;font-weight:600;border:1px solid transparent;transition:transform .3s}
+.sp:hover{transform:translateY(-3px)}
+.s1{background:rgba(34,211,238,.1);border-color:rgba(34,211,238,.25);color:var(--cyan)}
+.s2{background:rgba(167,139,250,.1);border-color:rgba(167,139,250,.25);color:var(--vio)}
+.s3{background:rgba(251,113,133,.1);border-color:rgba(251,113,133,.25);color:var(--rose)}
+.s4{background:rgba(251,191,36,.1);border-color:rgba(251,191,36,.25);color:var(--amb)}
+.s5{background:rgba(52,211,153,.1);border-color:rgba(52,211,153,.25);color:var(--emer)}
+
+/* SKILLS */
+#skills{background:radial-gradient(ellipse 600px 500px at 10% 60%,rgba(34,211,238,.06) 0%,transparent 60%),radial-gradient(ellipse 500px 500px at 90% 20%,rgba(251,113,133,.06) 0%,transparent 60%),var(--bg3)}
+.skwrap{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+.scard{padding:1.6rem 1.8rem}
+.skh{display:flex;justify-content:space-between;align-items:center;margin-bottom:.75rem}
+.sknm{font-weight:600;font-size:.95rem;display:flex;align-items:center;gap:.6rem}
+.skie{font-size:1.1rem}
+.skpc{font-size:.9rem;font-weight:700}
+.sktk{height:7px;background:rgba(255,255,255,.06);border-radius:4px;overflow:hidden}
+.skfl{height:100%;border-radius:4px;width:0;transition:width 1.5s cubic-bezier(.4,0,.2,1)}
+.f1{background:var(--g1);box-shadow:0 0 14px rgba(34,211,238,.4)}
+.f2{background:var(--g4);box-shadow:0 0 14px rgba(167,139,250,.4)}
+.f3{background:var(--g2);box-shadow:0 0 14px rgba(251,113,133,.4)}
+.f4{background:var(--g3);box-shadow:0 0 14px rgba(52,211,153,.4)}
+.f5{background:var(--g5);box-shadow:0 0 14px rgba(251,191,36,.4)}
+.f6{background:linear-gradient(135deg,#ec4899,#a78bfa);box-shadow:0 0 14px rgba(236,72,153,.4)}
+.f7{background:linear-gradient(135deg,#60a5fa,#34d399);box-shadow:0 0 14px rgba(96,165,250,.4)}
+.f8{background:linear-gradient(135deg,#fbbf24,#f87171);box-shadow:0 0 14px rgba(251,191,36,.4)}
+
+/* SERVICES */
+#services{background:radial-gradient(ellipse 700px 600px at 80% 40%,rgba(167,139,250,.07) 0%,transparent 60%),var(--bg)}
+.svgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1.6rem}
+.svc{padding:2.2rem;position:relative;overflow:hidden;cursor:default}
+.svc::before{content:'';position:absolute;inset:0;border-radius:22px;background:var(--svbg,linear-gradient(135deg,rgba(34,211,238,.05),rgba(167,139,250,.05)));opacity:0;transition:opacity .35s}
+.svc:hover::before{opacity:1}
+.svic{width:56px;height:56px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:1.6rem;margin-bottom:1.4rem;position:relative;z-index:1;transition:transform .35s}
+.svc:hover .svic{transform:scale(1.12) rotate(-5deg)}
+.svc h3{font-size:1.1rem;font-weight:700;margin-bottom:.6rem;position:relative;z-index:1}
+.svc p{color:var(--muted);font-size:.88rem;line-height:1.65;position:relative;z-index:1}
+.svtg{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-top:1rem;position:relative;z-index:1}
+.svi1{background:rgba(34,211,238,.12);color:var(--cyan)}
+.svi2{background:rgba(167,139,250,.12);color:var(--vio)}
+.svi3{background:rgba(251,191,36,.12);color:var(--amb)}
+.svi4{background:rgba(251,113,133,.12);color:var(--rose)}
+.svi5{background:rgba(52,211,153,.12);color:var(--emer)}
+
+/* TOOLS */
+#tools{background:radial-gradient(ellipse 600px 400px at 50% 100%,rgba(34,211,238,.06) 0%,transparent 70%),var(--bg2)}
+.trow{display:flex;flex-wrap:wrap;gap:.9rem;justify-content:center}
+.tchip{display:flex;align-items:center;gap:.75rem;background:var(--card);border:1px solid var(--bdr);padding:.75rem 1.4rem;border-radius:14px;transition:border-color .3s,transform .3s,box-shadow .3s;cursor:default}
+.tchip:hover{transform:translateY(-5px);box-shadow:0 12px 30px rgba(0,0,0,.5)}
+.tchip:nth-child(1):hover{border-color:var(--cyan)}.tchip:nth-child(2):hover{border-color:var(--vio)}
+.tchip:nth-child(3):hover{border-color:var(--blue)}.tchip:nth-child(4):hover{border-color:var(--amb)}
+.tchip:nth-child(5):hover{border-color:var(--emer)}.tchip:nth-child(6):hover{border-color:var(--cyan)}
+.tchip:nth-child(7):hover{border-color:var(--rose)}.tchip:nth-child(8):hover{border-color:var(--vio)}
+.tchip:nth-child(9):hover{border-color:var(--blue)}.tchip:nth-child(10):hover{border-color:var(--amb)}
+.tico{font-size:1.35rem}.tnm{font-size:.88rem;font-weight:600}
+
+/* PORTFOLIO */
+#portfolio{background:radial-gradient(ellipse 800px 500px at 0% 50%,rgba(251,113,133,.06) 0%,transparent 60%),radial-gradient(ellipse 600px 400px at 100% 80%,rgba(34,211,238,.05) 0%,transparent 60%),var(--bg3)}
+.pflt{display:flex;gap:.7rem;flex-wrap:wrap;margin-bottom:2.5rem}
+.pfb{background:var(--card);border:1px solid var(--bdr);color:var(--muted);padding:.42rem 1.2rem;border-radius:50px;cursor:pointer;font-size:.82rem;font-family:'Outfit',sans-serif;font-weight:500;transition:all .3s}
+.pfb.on,.pfb:hover{color:#fff}
+.pfb.on[data-f="all"],.pfb:hover[data-f="all"]{background:var(--g1);border-color:transparent}
+.pfb.on[data-f="web"],.pfb:hover[data-f="web"]{background:var(--g3);border-color:transparent}
+.pfb.on[data-f="google"],.pfb:hover[data-f="google"]{background:var(--g5);border-color:transparent}
+.pfb.on[data-f="meta"],.pfb:hover[data-f="meta"]{background:var(--g4);border-color:transparent}
+.pfb.on[data-f="lead"],.pfb:hover[data-f="lead"]{background:var(--g2);border-color:transparent}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:1.6rem}
+.pc{border-radius:22px;overflow:hidden;cursor:pointer;transition:transform .4s,box-shadow .4s;border:1px solid var(--bdr)}
+.pc:hover{transform:translateY(-8px);box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.pcimg{width:100%;aspect-ratio:16/10;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.pcimg-in{position:absolute;inset:0;transition:transform .5s}
+.pc:hover .pcimg-in{transform:scale(1.08)}
+/* unique vivid background per card */
+.pi1{background:linear-gradient(145deg,#071628 0%,#0a2a5c 35%,#1042a8 60%,#0c2f7c 80%,#061020 100%)}
+.pi2{background:linear-gradient(145deg,#071a08 0%,#0b3a0e 35%,#136620 60%,#0a4515 80%,#041008 100%)}
+.pi3{background:linear-gradient(145deg,#1a0735 0%,#360a6e 35%,#5c15b0 60%,#3d0d80 80%,#120522 100%)}
+.pi4{background:linear-gradient(145deg,#1e0508 0%,#4a0c10 35%,#8a1818 60%,#5c0e0e 80%,#150406 100%)}
+.pi5{background:linear-gradient(145deg,#061525 0%,#0c2e50 35%,#124a80 60%,#0a3260 80%,#040e1a 100%)}
+.pi6{background:linear-gradient(145deg,#0a1f06 0%,#183c0c 35%,#286015 60%,#1c4810 80%,#071208 100%)}
+/* dot-grid overlay on each card image */
+.pcimg::before{content:'';position:absolute;inset:0;background:radial-gradient(circle,rgba(255,255,255,.06) 1px,transparent 1px);background-size:24px 24px;z-index:1}
+.pcemoji{position:relative;z-index:2;font-size:2.6rem;filter:drop-shadow(0 4px 16px rgba(0,0,0,.5))}
+/* floating tag inside image */
+.pctag-img{position:absolute;top:12px;left:12px;z-index:3;font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.3rem .8rem;border-radius:50px;backdrop-filter:blur(10px)}
+.pcov{position:absolute;inset:0;background:linear-gradient(to top,rgba(6,9,26,.97) 0%,rgba(6,9,26,.2) 50%,transparent 100%);z-index:3;display:flex;flex-direction:column;justify-content:flex-end;padding:1.4rem;opacity:0;transition:opacity .4s}
+.pc:hover .pcov{opacity:1}
+.pcinfo{padding:1.3rem;background:rgba(8,12,32,.6);backdrop-filter:blur(12px)}
+.pccat{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.35rem}
+.pctitle{font-family:'Cabinet Grotesk',sans-serif;font-weight:800;font-size:1.05rem;margin-bottom:.35rem}
+.pcdesc{font-size:.82rem;color:var(--muted)}
+.pcbtn{display:inline-flex;align-items:center;gap:.4rem;margin-top:.8rem;font-size:.78rem;font-weight:700;letter-spacing:.04em;padding:.38rem .9rem;border-radius:50px}
+
+/* RESULTS */
+#results{background:radial-gradient(ellipse 900px 600px at 50% 50%,rgba(34,211,238,.05) 0%,rgba(167,139,250,.06) 50%,transparent 80%),var(--bg2);position:relative;overflow:hidden}
+#results::before{content:'';position:absolute;inset:0;background:radial-gradient(circle,rgba(34,211,238,.07) 1.5px,transparent 1.5px);background-size:40px 40px;pointer-events:none}
+.rgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.6rem;position:relative;z-index:1}
+.rcd{padding:2.5rem 1.5rem;text-align:center;position:relative;overflow:hidden}
+.rcd::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:2px}
+.rcd:nth-child(1)::before{background:var(--g1)}.rcd:nth-child(2)::before{background:var(--g2)}
+.rcd:nth-child(3)::before{background:var(--g3)}.rcd:nth-child(4)::before{background:var(--g5)}
+.rcdico{font-size:2rem;margin-bottom:.8rem;display:block}
+.rcdnum{font-family:'Cabinet Grotesk',sans-serif;font-weight:900;font-size:clamp(2.6rem,5.5vw,4.2rem);display:block;line-height:1;margin-bottom:.5rem}
+.rcd:nth-child(1) .rcdnum{background:var(--g1);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.rcd:nth-child(2) .rcdnum{background:var(--g2);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.rcd:nth-child(3) .rcdnum{background:var(--g3);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.rcd:nth-child(4) .rcdnum{background:var(--g5);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.rcdlbl{color:var(--muted);font-size:.85rem;font-weight:500}
+
+/* TESTIMONIALS */
+#testimonials{background:radial-gradient(ellipse 700px 500px at 90% 30%,rgba(167,139,250,.07) 0%,transparent 60%),var(--bg)}
+.touter{overflow:hidden}
+.ttrack{display:flex;gap:1.6rem;transition:transform .65s cubic-bezier(.4,0,.2,1)}
+.tcd{min-width:380px;padding:2.2rem;flex-shrink:0;position:relative;overflow:hidden}
+.tcd::before{content:'"';position:absolute;top:-10px;right:20px;font-size:7rem;color:rgba(34,211,238,.06);line-height:1;font-family:Georgia,serif}
+.tcds{margin-bottom:1.1rem}
+.tcds span{color:#fbbf24;font-size:1rem}
+.tcdtxt{color:var(--muted);font-style:italic;margin-bottom:1.6rem;line-height:1.75;font-size:.95rem;position:relative;z-index:1}
+.tcdau{display:flex;align-items:center;gap:.9rem;position:relative;z-index:1}
+.tcdav{width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.95rem;color:#fff;flex-shrink:0;font-family:'Cabinet Grotesk',sans-serif}
+.tcd:nth-child(1) .tcdav{background:var(--g1)}.tcd:nth-child(2) .tcdav{background:var(--g4)}
+.tcd:nth-child(3) .tcdav{background:var(--g2)}.tcd:nth-child(4) .tcdav{background:var(--g3)}
+.tcdnm{font-weight:700;font-size:.95rem;font-family:'Cabinet Grotesk',sans-serif}
+.tcdrl{color:var(--muted);font-size:.78rem}
+.tnav{display:flex;gap:.8rem;margin-top:2rem;align-items:center}
+.tnb{width:46px;height:46px;border-radius:50%;background:var(--card);border:1px solid var(--bdr);color:var(--text);font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .3s,border-color .3s,color .3s}
+.tnb:hover{background:var(--g1);border-color:transparent;color:#fff}
+.tdots{display:flex;gap:.4rem;margin-left:.5rem}
+.tdot{width:8px;height:8px;border-radius:50%;background:var(--bdr);transition:all .3s;cursor:pointer}
+.tdot.on{background:var(--cyan);width:22px;border-radius:4px}
+
+/* CERTIFICATIONS */
+#certifications{background:radial-gradient(ellipse 600px 500px at 20% 50%,rgba(251,191,36,.05) 0%,transparent 60%),var(--bg3)}
+.cwrap{display:flex;flex-wrap:wrap;gap:1rem}
+.ccd{display:flex;align-items:center;gap:1rem;background:var(--card);border:1px solid var(--bdr);padding:1.1rem 1.5rem;border-radius:16px;transition:border-color .3s,transform .3s,box-shadow .3s;cursor:default;position:relative;overflow:hidden}
+.ccd:hover{transform:translateY(-5px);box-shadow:0 16px 40px rgba(0,0,0,.5);border-color:rgba(34,211,238,.3)}
+.ccd::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px}
+.ccd:nth-child(1)::after{background:var(--g1)}.ccd:nth-child(2)::after{background:var(--g1)}
+.ccd:nth-child(3)::after{background:var(--g3)}.ccd:nth-child(4)::after{background:var(--g2)}
+.ccd:nth-child(5)::after{background:var(--g5)}.ccd:nth-child(6)::after{background:var(--g4)}
+.cicw{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
+.ci1{background:rgba(34,211,238,.12)}.ci2{background:rgba(34,211,238,.12)}.ci3{background:rgba(52,211,153,.12)}
+.ci4{background:rgba(251,113,133,.12)}.ci5{background:rgba(251,191,36,.12)}.ci6{background:rgba(96,165,250,.12)}
+.cclb{font-weight:700;font-size:.9rem;font-family:'Cabinet Grotesk',sans-serif}
+.ccorg{font-size:.73rem;color:var(--muted);margin-top:.15rem}
+.ccdt{width:8px;height:8px;border-radius:50%;background:var(--emer);margin-left:auto;box-shadow:0 0 8px var(--emer);flex-shrink:0}
+
+/* CONTACT */
+#contact{background:radial-gradient(ellipse 800px 600px at 50% 0%,rgba(34,211,238,.07) 0%,transparent 60%),radial-gradient(ellipse 600px 400px at 100% 100%,rgba(167,139,250,.06) 0%,transparent 60%),var(--bg2)}
+.cwg{display:grid;grid-template-columns:1fr 1.4fr;gap:4.5rem;align-items:start}
+.cls h3{font-size:1.6rem;font-weight:800;margin-bottom:.8rem;font-family:'Cabinet Grotesk',sans-serif}
+.cls p{color:var(--muted);margin-bottom:2rem;font-size:.95rem}
+.clks{display:flex;flex-direction:column;gap:.8rem}
+.clk{display:flex;align-items:center;gap:1rem;padding:1rem 1.2rem;border-radius:14px;text-decoration:none;color:var(--text);background:var(--card);border:1px solid var(--bdr);transition:border-color .3s,transform .3s,box-shadow .3s}
+.clk:hover{transform:translateX(7px)}
+.clk:nth-child(1):hover{border-color:var(--cyan);box-shadow:0 0 30px rgba(34,211,238,.12)}
+.clk:nth-child(2):hover{border-color:var(--vio);box-shadow:0 0 30px rgba(167,139,250,.12)}
+.clk:nth-child(3):hover{border-color:#25d366;box-shadow:0 0 30px rgba(37,211,102,.12)}
+.clkic{width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+.ciem{background:rgba(34,211,238,.12);color:var(--cyan)}.cili{background:rgba(167,139,250,.12);color:var(--vio)}.ciwa{background:rgba(37,211,102,.12);color:#25d366}
+.clksb{font-size:.72rem;color:var(--muted);display:block;margin-bottom:.1rem}
+.clkv{font-size:.92rem;font-weight:600}
+.cfrm{display:flex;flex-direction:column;gap:1rem}
+.crw{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.cin,.ctx{width:100%;background:rgba(255,255,255,.035);border:1px solid var(--bdr);color:var(--text);padding:.88rem 1.1rem;border-radius:13px;font-family:'Outfit',sans-serif;font-size:.9rem;outline:none;resize:none;transition:border-color .3s,box-shadow .3s}
+.cin:focus,.ctx:focus{border-color:var(--cyan);box-shadow:0 0 0 3px rgba(34,211,238,.08)}
+.cin::placeholder,.ctx::placeholder{color:var(--muted)}.ctx{min-height:130px}
+.csb{background:var(--g1);color:#fff;border:none;padding:.88rem 2.2rem;border-radius:50px;font-family:'Cabinet Grotesk',sans-serif;font-weight:800;font-size:.95rem;cursor:pointer;letter-spacing:.02em;box-shadow:0 6px 24px rgba(34,211,238,.3);transition:transform .3s,box-shadow .3s;align-self:flex-start}
+.csb:hover{transform:translateY(-4px);box-shadow:0 12px 36px rgba(34,211,238,.5)}
+
+/* FOOTER */
+footer{background:var(--bg);border-top:1px solid var(--bdr);padding:2.5rem 2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.flt{font-size:.85rem;color:var(--muted)}.flt span{color:var(--cyan)}
+.fsoc{display:flex;gap:.7rem}
+.fsc{width:36px;height:36px;border-radius:10px;background:var(--card);border:1px solid var(--bdr);display:flex;align-items:center;justify-content:center;font-size:.9rem;text-decoration:none;color:var(--muted);transition:border-color .3s,color .3s,transform .3s}
+.fsc:hover{border-color:var(--cyan);color:var(--cyan);transform:translateY(-3px)}
+
+/* TOAST */
+#toast{position:fixed;bottom:2rem;right:2rem;background:var(--g3);color:#fff;padding:1rem 1.6rem;border-radius:14px;font-weight:700;font-size:.9rem;z-index:9999;transform:translateY(100px);opacity:0;transition:all .4s;box-shadow:0 12px 40px rgba(52,211,153,.4)}
+#toast.on{transform:translateY(0);opacity:1}
+
+/* RESPONSIVE */
+@media(max-width:900px){.agrid{grid-template-columns:1fr}.aphoto{max-width:340px;margin:0 auto}.skwrap{grid-template-columns:1fr}.cwg{grid-template-columns:1fr}.crw{grid-template-columns:1fr}}
+@media(max-width:768px){.nav-links{display:none;position:fixed;inset:0;top:62px;background:rgba(6,9,26,.97);flex-direction:column;align-items:center;justify-content:center;gap:2rem;z-index:999}.nav-links.open{display:flex}.hamburger{display:flex}.tcd{min-width:290px}}
+</style>
+</head>
+<body>
+<div id="toast">✓ Message sent! I'll get back to you soon.</div>
+
+<!-- NAV -->
+<nav>
+  <a class="logo" href="#hero">TS.</a>
+  <ul class="nav-links" id="nLinks">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#portfolio">Work</a></li>
+    <li><a href="#results">Results</a></li>
+    <li><a href="#contact" class="nav-hire">Hire Me ↗</a></li>
+  </ul>
+  <div class="hamburger" onclick="document.getElementById('nLinks').classList.toggle('open')"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- ════ HERO ════ -->
+<section id="hero">
+  <canvas id="pcvs"></canvas>
+  <div class="hc">
+    <div class="hpill"><span class="ldot"></span>Open to new opportunities</div>
+    <h1 class="hh1"><span class="gc1">Web Developer</span><br>&amp; <span class="gc4">Digital Marketing</span><br>Executive</h1>
+    <div class="htype"><span id="typing"></span><span class="cur"></span></div>
+    <p class="hsub">Expert in Google Ads, Meta Ads, PPC campaigns, lead generation &amp; WordPress development — turning clicks into paying customers.</p>
+    <div class="hbtns">
+      <a href="#portfolio" class="bglow">View Portfolio ↓</a>
+      <a href="#contact" class="bgh">Let's Talk →</a>
+    </div>
+    <div class="hstats">
+      <div><span class="hsn">200+</span><span class="hsl">Leads Generated</span></div>
+      <div><span class="hsn">₹120</span><span class="hsl">Avg CPL Achieved</span></div>
+      <div><span class="hsn">4X</span><span class="hsl">ROAS Delivered</span></div>
+      <div><span class="hsn">35%</span><span class="hsl">Conversion Rate</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ ABOUT ════ -->
+<section id="about">
+  <div class="ctn">
+    <div class="agrid">
+      <div data-aos="fade-right">
+        <div class="aphoto">
+          <div class="aphoto-in">
+            <div class="aav">AD</div>
+            <div class="anb"><div class="anm">Tejas Shinde</div><div class="aro">Web Developer &amp; Marketing Expert</div></div>
+            <div class="abadges"><span class="abadge">WordPress</span><span class="abadge">Google Ads</span><span class="abadge">Meta Ads</span><span class="abadge">Lead Gen</span></div>
+          </div>
+          <div class="axp">2+ <small>Years of<br>Experience</small></div>
+        </div>
+      </div>
+      <div data-aos="fade-left">
+        <span class="eye">About Me</span>
+        <h2 class="sech">Turning <span style="background:var(--g1);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Ideas</span> Into <span style="background:var(--g4);-webkit-background-clip:text;-webkit-text-fill-color:transparent">Revenue</span></h2>
+        <div class="bar bc"></div>
+        <p class="ap">Hey! I'm Tejas — a results-driven Web Developer and Digital Marketing Executive with 2+ years of hands-on experience building conversion-focused websites and data-powered ad campaigns that actually generate revenue.</p>
+        <p class="ap">From crafting lightning-fast WordPress websites to managing high-ROI Google Ads and Meta Ads campaigns, I bring a full-stack marketing approach. My work is driven by data, creativity, and an obsession with measurable outcomes.</p>
+        <div class="ahl">"I don't just run ads — I build systems that generate consistent, qualified leads at the lowest possible cost per lead."</div>
+        <div class="spills">
+          <span class="sp s1">⚡ PPC Expert</span>
+          <span class="sp s2">🎨 WordPress Dev</span>
+          <span class="sp s3">🎯 Lead Gen</span>
+          <span class="sp s4">📊 Analytics</span>
+          <span class="sp s5">✅ CPL Optimizer</span>
+          <span class="sp s1">🔄 Conversion Tracking</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ SKILLS ════ -->
+<section id="skills">
+  <div class="ctn">
+    <div style="text-align:center;margin-bottom:3rem" data-aos="fade-up">
+      <span class="eye">My Expertise</span>
+      <h2 class="sech">Core Skills</h2>
+      <div class="bar bg" style="margin:1rem auto 0"></div>
+    </div>
+    <div class="skwrap">
+      <div class="gc scard" data-aos="fade-up" data-aos-delay="0">
+        <div class="skh"><span class="sknm"><span class="skie">🔵</span>WordPress Development</span><span class="skpc" style="color:var(--cyan)">92%</span></div>
+        <div class="sktk"><div class="skfl f1" data-w="92"></div></div>
+      </div>
+      <div class="gc scard" data-aos="fade-up" data-aos-delay="60">
+        <div class="skh"><span class="sknm"><span class="skie">📱</span>Responsive Web Design</span><span class="skpc" style="color:var(--vio)">88%</span></div>
+        <div class="sktk"><div class="skfl f2" data-w="88"></div></div>
+      </div>
+      <div class="gc scard" data-aos="fade-up" data-aos-delay="120">
+        <div class="skh"><span class="sknm"><span class="skie">📈</span>Google Ads (PPC)</span><span class="skpc" style="color:var(--rose)">90%</span></div>
+        <div class="sktk"><div class="skfl f3" data-w="90"></div></div>
+      </div>
+      <div class="gc scard" data-aos="fade-up" data-aos-delay="180">
+        <div class="skh"><span class="sknm"><span class="skie">📘</span>Meta Ads</span><span class="skpc" style="color:var(--emer)">87%</span></div>
+        <div class="sktk"><div class="skfl f4" data-w="87"></div></div>
+      </div>
+      <div class="gc scard" data-aos="fade-up" data-aos-delay="240">
+        <div class="skh"><span class="sknm"><span class="skie">🎯</span>Lead Generation</span><span class="skpc" style="color:var(--amb)">93%</span></div>
+        <div class="sktk"><div class="skfl f5" data-w="93"></div></div>
+      </div>
+      <div class="gc scard" data-aos="fade-up" data-aos-delay="300">
+        <div class="skh"><span class="sknm"><span class="skie">💰</span>CPL Optimization</span><span class="skpc" style="color:#ec4899">85%</span></div>
+        <div class="sktk"><div class="skfl f6" data-w="85"></div></div>
+      </div>
+      <div class="gc scard" data-aos="fade-up" data-aos-delay="360">
+        <div class="skh"><span class="sknm"><span class="skie">🔄</span>Conversion Tracking</span><span class="skpc" style="color:var(--blue)">89%</span></div>
+        <div class="sktk"><div class="skfl f7" data-w="89"></div></div>
+      </div>
+      <div class="gc scard" data-aos="fade-up" data-aos-delay="420">
+        <div class="skh"><span class="sknm"><span class="skie">🖌️</span>Landing Page Design</span><span class="skpc" style="color:var(--amb)">91%</span></div>
+        <div class="sktk"><div class="skfl f8" data-w="91"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ SERVICES ════ -->
+<section id="services">
+  <div class="ctn">
+    <div data-aos="fade-up" style="margin-bottom:3rem">
+      <span class="eye">What I Offer</span>
+      <h2 class="sech">Services</h2>
+      <div class="bar bp"></div>
+    </div>
+    <div class="svgrid">
+      <div class="gc svc" style="--svbg:linear-gradient(135deg,rgba(34,211,238,.07),rgba(96,165,250,.07))" data-aos="fade-up">
+        <div class="svic svi1">🌐</div>
+        <h3>Website Development</h3>
+        <p>Custom WordPress websites built for speed, SEO, and conversions. Mobile-first, pixel-perfect, and production-ready with Elementor or custom code.</p>
+        <span class="svtg" style="color:var(--cyan)">WordPress · Elementor · Custom CSS</span>
+      </div>
+      <div class="gc svc" style="--svbg:linear-gradient(135deg,rgba(167,139,250,.07),rgba(236,72,153,.07))" data-aos="fade-up" data-aos-delay="80">
+        <div class="svic svi2">🎯</div>
+        <h3>Landing Page Design</h3>
+        <p>High-converting landing pages with persuasive copy, optimized CTAs, and conversion-focused UX. Every element A/B tested for maximum performance.</p>
+        <span class="svtg" style="color:var(--vio)">CRO · UX Design · Copywriting</span>
+      </div>
+      <div class="gc svc" style="--svbg:linear-gradient(135deg,rgba(251,191,36,.07),rgba(249,115,22,.07))" data-aos="fade-up" data-aos-delay="160">
+        <div class="svic svi3">📊</div>
+        <h3>Google Ads Management</h3>
+        <p>Data-driven PPC campaigns with laser-targeted keywords, compelling ad copies, full conversion tracking, and continuous optimization for maximum ROI.</p>
+        <span class="svtg" style="color:var(--amb)">Search · Display · Performance Max</span>
+      </div>
+      <div class="gc svc" style="--svbg:linear-gradient(135deg,rgba(251,113,133,.07),rgba(249,115,22,.07))" data-aos="fade-up" data-aos-delay="240">
+        <div class="svic svi4">📱</div>
+        <h3>Meta Ads Campaigns</h3>
+        <p>Facebook &amp; Instagram ad campaigns with deep audience research, creative strategy, pixel retargeting, and lookalike audiences to maximize ROAS.</p>
+        <span class="svtg" style="color:var(--rose)">Facebook · Instagram · Reels Ads</span>
+      </div>
+      <div class="gc svc" style="--svbg:linear-gradient(135deg,rgba(52,211,153,.07),rgba(34,211,238,.07))" data-aos="fade-up" data-aos-delay="320">
+        <div class="svic svi5">🚀</div>
+        <h3>Lead Generation Setup</h3>
+        <p>End-to-end lead generation systems: form setup, CRM integration, tracking, nurture sequences, and full CPL optimization strategies for consistent ROI.</p>
+        <span class="svtg" style="color:var(--emer)">CRM · Automation · Analytics</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ TOOLS ════ -->
+<section id="tools">
+  <div class="ctn">
+    <div style="text-align:center;margin-bottom:3rem" data-aos="fade-up">
+      <span class="eye">Tech Stack</span>
+      <h2 class="sech">Tools &amp; Platforms</h2>
+      <div class="bar bc" style="margin:1rem auto 0"></div>
+    </div>
+    <div class="trow" data-aos="fade-up" data-aos-delay="100">
+      <div class="tchip"><span class="tico">📈</span><span class="tnm">Google Ads</span></div>
+      <div class="tchip"><span class="tico">📘</span><span class="tnm">Meta Ads Manager</span></div>
+      <div class="tchip"><span class="tico">🔵</span><span class="tnm">WordPress</span></div>
+      <div class="tchip"><span class="tico">⚡</span><span class="tnm">Elementor</span></div>
+      <div class="tchip"><span class="tico">📊</span><span class="tnm">Google Analytics 4</span></div>
+      <div class="tchip"><span class="tico">🏷️</span><span class="tnm">Google Tag Manager</span></div>
+      <div class="tchip"><span class="tico">🔍</span><span class="tnm">SEMrush</span></div>
+      <div class="tchip"><span class="tico">🎨</span><span class="tnm">Canva</span></div>
+      <div class="tchip"><span class="tico">📋</span><span class="tnm">Search Console</span></div>
+      <div class="tchip"><span class="tico">📧</span><span class="tnm">Mailchimp</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ PORTFOLIO ════ -->
+<section id="portfolio">
+  <div class="ctn">
+    <div data-aos="fade-up" style="margin-bottom:2rem">
+      <span class="eye">My Work</span>
+      <h2 class="sech">Portfolio</h2>
+      <div class="bar br"></div>
+    </div>
+    <div class="pflt" data-aos="fade-up" data-aos-delay="80">
+      <button class="pfb on" data-f="all" onclick="fp(this,'all')">All Projects</button>
+      <button class="pfb" data-f="web" onclick="fp(this,'web')">Web Dev</button>
+      <button class="pfb" data-f="google" onclick="fp(this,'google')">Google Ads</button>
+      <button class="pfb" data-f="meta" onclick="fp(this,'meta')">Meta Ads</button>
+      <button class="pfb" data-f="lead" onclick="fp(this,'lead')">Lead Gen</button>
+    </div>
+    <div class="pgrid" id="pgrid">
+
+      <div class="pc" data-c="web" data-aos="fade-up">
+        <div class="pcimg">
+          <div class="pcimg-in pi1"></div>
+          <span class="pctag-img" style="background:rgba(34,211,238,.15);color:var(--cyan)">WordPress</span>
+          <span class="pcemoji">🏠</span>
+          <div class="pcov"><span class="pcbtn" style="background:var(--g3);color:#fff">View Project →</span></div>
+        </div>
+        <div class="pcinfo">
+          <div class="pccat" style="color:var(--emer)">WordPress Development</div>
+          <div class="pctitle">Real Estate Agency Website</div>
+          <div class="pcdesc">Full WordPress site with property listings, advanced search filters &amp; integrated lead capture forms.</div>
+        </div>
+      </div>
+
+      <div class="pc" data-c="google" data-aos="fade-up" data-aos-delay="80">
+        <div class="pcimg">
+          <div class="pcimg-in pi2"></div>
+          <span class="pctag-img" style="background:rgba(251,191,36,.15);color:var(--amb)">Google Ads</span>
+          <span class="pcemoji">🎓</span>
+          <div class="pcov"><span class="pcbtn" style="background:var(--g5);color:#fff">View Case Study →</span></div>
+        </div>
+        <div class="pcinfo">
+          <div class="pccat" style="color:var(--amb)">Google Ads</div>
+          <div class="pctitle">EdTech PPC Campaign</div>
+          <div class="pcdesc">Search + Display achieving ₹110 CPL with 38% conversion rate in competitive ed-tech vertical.</div>
+        </div>
+      </div>
+
+      <div class="pc" data-c="meta" data-aos="fade-up" data-aos-delay="160">
+        <div class="pcimg">
+          <div class="pcimg-in pi3"></div>
+          <span class="pctag-img" style="background:rgba(167,139,250,.15);color:var(--vio)">Meta Ads</span>
+          <span class="pcemoji">🏥</span>
+          <div class="pcov"><span class="pcbtn" style="background:var(--g4);color:#fff">View Case Study →</span></div>
+        </div>
+        <div class="pcinfo">
+          <div class="pccat" style="color:var(--vio)">Meta Ads</div>
+          <div class="pctitle">Healthcare Lead Campaign</div>
+          <div class="pcdesc">Facebook lead ads: 500+ qualified leads with ₹95 CPL in 30 days using advanced audience layering.</div>
+        </div>
+      </div>
+
+      <div class="pc" data-c="lead" data-aos="fade-up" data-aos-delay="240">
+        <div class="pcimg">
+          <div class="pcimg-in pi4"></div>
+          <span class="pctag-img" style="background:rgba(251,113,133,.15);color:var(--rose)">Lead Gen</span>
+          <span class="pcemoji">💼</span>
+          <div class="pcov"><span class="pcbtn" style="background:var(--g2);color:#fff">View Case Study →</span></div>
+        </div>
+        <div class="pcinfo">
+          <div class="pccat" style="color:var(--rose)">Lead Generation</div>
+          <div class="pctitle">B2B SaaS Lead Funnel</div>
+          <div class="pcdesc">Multi-channel funnel generating 200+ MQLs monthly with automated CRM nurturing &amp; drip campaigns.</div>
+        </div>
+      </div>
+
+      <div class="pc" data-c="web" data-aos="fade-up" data-aos-delay="320">
+        <div class="pcimg">
+          <div class="pcimg-in pi5"></div>
+          <span class="pctag-img" style="background:rgba(34,211,238,.15);color:var(--cyan)">Landing Page</span>
+          <span class="pcemoji">📚</span>
+          <div class="pcov"><span class="pcbtn" style="background:var(--g1);color:#fff">View Project →</span></div>
+        </div>
+        <div class="pcinfo">
+          <div class="pccat" style="color:var(--cyan)">Landing Page</div>
+          <div class="pctitle">Digital Course Sales Page</div>
+          <div class="pcdesc">High-converting Elementor page with 42% opt-in rate, payment gateway &amp; automated upsell flow.</div>
+        </div>
+      </div>
+
+      <div class="pc" data-c="google" data-aos="fade-up" data-aos-delay="400">
+        <div class="pcimg">
+          <div class="pcimg-in pi6"></div>
+          <span class="pctag-img" style="background:rgba(52,211,153,.15);color:var(--emer)">Perf Max</span>
+          <span class="pcemoji">🛍️</span>
+          <div class="pcov"><span class="pcbtn" style="background:var(--g3);color:#fff">View Case Study →</span></div>
+        </div>
+        <div class="pcinfo">
+          <div class="pccat" style="color:var(--emer)">Google Ads</div>
+          <div class="pctitle">E-commerce Performance Max</div>
+          <div class="pcdesc">Performance Max delivering 4.2X ROAS on ₹50K monthly budget with smart bidding optimization.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════ RESULTS ════ -->
+<section id="results">
+  <div class="ctn">
+    <div style="text-align:center;margin-bottom:3rem" data-aos="fade-up">
+      <span class="eye">Proven Impact</span>
+      <h2 class="sech">Campaign Results</h2>
+      <div class="bar bc" style="margin:1rem auto 0"></div>
+      <p class="secp" style="text-align:center;margin:.8rem auto 0">Real numbers from real campaigns. Zero vanity metrics, just pure results.</p>
+    </div>
+    <div class="rgrid">
+      <div class="gc rcd" data-aos="zoom-in"><span class="rcdico">🚀</span><span class="rcdnum counter" data-t="200" data-suf="+">0</span><div class="rcdlbl">Leads Generated</div></div>
+      <div class="gc rcd" data-aos="zoom-in" data-aos-delay="100"><span class="rcdico">💰</span><span class="rcdnum counter" data-t="120" data-pre="₹">0</span><div class="rcdlbl">Average CPL Achieved</div></div>
+      <div class="gc rcd" data-aos="zoom-in" data-aos-delay="200"><span class="rcdico">📊</span><span class="rcdnum counter" data-t="35" data-suf="%">0</span><div class="rcdlbl">Conversion Rate</div></div>
+      <div class="gc rcd" data-aos="zoom-in" data-aos-delay="300"><span class="rcdico">🏆</span><span class="rcdnum counter" data-t="4" data-suf="X ROAS">0</span><div class="rcdlbl">Return on Ad Spend</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ TESTIMONIALS ════ -->
+<section id="testimonials">
+  <div class="ctn">
+    <div data-aos="fade-up" style="margin-bottom:2.5rem">
+      <span class="eye">Client Love</span>
+      <h2 class="sech">Testimonials</h2>
+      <div class="bar bp"></div>
+    </div>
+    <div class="touter" data-aos="fade-up" data-aos-delay="80">
+      <div class="ttrack" id="ttrack">
+        <div class="gc tcd">
+          <div class="tcds"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+          <p class="tcdtxt">"Tejas completely transformed our Google Ads account. Our CPL dropped from ₹800 to ₹350 in just 4 weeks and conversions tripled. The tracking setup was absolutely flawless."</p>
+          <div class="tcdau"><div class="tcdav">RK</div><div><div class="tcdnm">Bum Bum Realty</div><div class="tcdrl">Founder, EduPath Institute</div></div></div>
+        </div>
+        <div class="gc tcd">
+          <div class="tcds"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+          <p class="tcdtxt">"The WordPress website Tejas built is exactly what we envisioned — fast, beautiful, and built to convert. We saw a 40% jump in property inquiries within the very first month of launch."</p>
+          <div class="tcdau"><div class="tcdav">PS</div><div><div class="tcdnm">Priya Sharma</div><div class="tcdrl">MD, Sharma Properties</div></div></div>
+        </div>
+        <div class="gc tcd">
+          <div class="tcds"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+          <p class="tcdtxt">"Our Meta Ads campaign delivered 500+ leads in 30 days at an incredibly low CPL. Tejas's audience targeting and creative strategy were spot on. Will work with him again for sure!"</p>
+          <div class="tcdau"><div class="tcdav">AM</div><div><div class="tcdnm">Amit Mehta</div><div class="tcdrl">CEO, HealthFirst Clinics</div></div></div>
+        </div>
+        <div class="gc tcd">
+          <div class="tcds"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+          <p class="tcdtxt">"Exceptional e-commerce campaign work. The 4X ROAS exceeded all our expectations. Tejas is professional, data-driven, and genuinely invested in our long-term business success."</p>
+          <div class="tcdau"><div class="tcdav">SJ</div><div><div class="tcdnm">Sneha Joshi</div><div class="tcdrl">Owner, StyleHub Fashion</div></div></div>
+        </div>
+      </div>
+      <div class="tnav">
+        <button class="tnb" onclick="mvT(-1)">&#8592;</button>
+        <button class="tnb" onclick="mvT(1)">&#8594;</button>
+        <div class="tdots" id="tdots"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ CERTIFICATIONS ════ -->
+<section id="certifications">
+  <div class="ctn">
+    <div data-aos="fade-up" style="margin-bottom:2.5rem">
+      <span class="eye">Credentials</span>
+      <h2 class="sech">Certifications</h2>
+      <div class="bar bg"></div>
+    </div>
+    <div class="cwrap" data-aos="fade-up" data-aos-delay="80">
+      <div class="ccd"><div class="cicw ci1">📈</div><div><div class="cclb">Google Ads Search</div><div class="ccorg">Google — Certified Professional</div></div><div class="ccdt"></div></div>
+      <div class="ccd"><div class="cicw ci2">🖥️</div><div><div class="cclb">Google Ads Display</div><div class="ccorg">Google — Certified Professional</div></div><div class="ccdt"></div></div>
+      <div class="ccd"><div class="cicw ci3">📊</div><div><div class="cclb">Google Analytics 4</div><div class="ccorg">Google — GA4 Certified</div></div><div class="ccdt"></div></div>
+      <div class="ccd"><div class="cicw ci4">📘</div><div><div class="cclb">Meta Ads Blueprint</div><div class="ccorg">Meta — Blueprint Certified</div></div><div class="ccdt"></div></div>
+      <div class="ccd"><div class="cicw ci5">🎓</div><div><div class="cclb">Digital Marketing</div><div class="ccorg">HubSpot Academy — Certified</div></div><div class="ccdt"></div></div>
+      <div class="ccd"><div class="cicw ci6">🔍</div><div><div class="cclb">SEO Fundamentals</div><div class="ccorg">SEMrush Academy — Certified</div></div><div class="ccdt"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ CONTACT ════ -->
+<section id="contact">
+  <div class="ctn">
+    <div data-aos="fade-up" style="margin-bottom:3rem;text-align:center">
+      <span class="eye">Let's Work Together</span>
+      <h2 class="sech">Get In Touch</h2>
+      <div class="bar bc" style="margin:1rem auto 0"></div>
+    </div>
+    <div class="cwg">
+      <div class="cls" data-aos="fade-right">
+        <h3>Ready to <span style="background:var(--g1);-webkit-background-clip:text;-webkit-text-fill-color:transparent">grow</span> your business?</h3>
+        <p>Whether you need a stunning website, a high-ROI ad campaign, or a complete digital marketing strategy — let's build something amazing and profitable together.</p>
+        <div class="clks">
+          <a href="mailto:shinde2001ts@gmail.com" class="clk"><div class="clkic ciem">📧</div><div><span class="clksb">Email</span><span class="clkv">shinde2001ts@gmail.com</span></div></a>
+          <a href="https://linkedin.com" target="_blank" class="clk"><div class="clkic cili">💼</div><div><span class="clksb">LinkedIn</span><span class="clkv">linkedin.com/in/Tejasshinde</span></div></a>
+          <a href="https://wa.me/919892976420" target="_blank" class="clk"><div class="clkic ciwa">📲</div><div><span class="clksb">WhatsApp</span><span class="clkv" style="color:#25d366">Chat on WhatsApp</span></div></a>
+        </div>
+      </div>
+      <form class="cfrm" data-aos="fade-left" onsubmit="doSub(event)">
+        <div class="crw">
+          <input class="cin" type="text" placeholder="Your Name" required/>
+          <input class="cin" type="email" placeholder="Email Address" required/>
+        </div>
+        <input class="cin" type="text" placeholder="Subject (e.g. Google Ads Campaign Setup)"/>
+        <textarea class="ctx" placeholder="Tell me about your project, goals, timeline and budget..."></textarea>
+        <button type="submit" class="csb">Send Message →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="flt">Built with ❤️ by <span>Tejas Shinde</span> &nbsp;·&nbsp; © 2024 All Rights Reserved</div>
+  <div class="fsoc">
+    <a class="fsc" href="mailto:shinde2001ts@gmail.com">📧</a>
+    <a class="fsc" href="https://linkedin.com" target="_blank">💼</a>
+    <a class="fsc" href="https://wa.me/919892976420" target="_blank">📲</a>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+AOS.init({duration:850,once:true,offset:70});
+
+// nav scroll
+window.addEventListener('scroll',()=>{
+  document.querySelector('nav').style.background=window.scrollY>40?'rgba(6,9,26,.95)':'rgba(6,9,26,.82)';
+});
+
+// particles
+const cvs=document.getElementById('pcvs'),ctx=cvs.getContext('2d');
+let pts=[];
+function rsz(){cvs.width=innerWidth;cvs.height=innerHeight}
+rsz();window.addEventListener('resize',rsz);
+const COLS=['34,211,238','167,139,250','251,113,133','52,211,153','251,191,36','96,165,250'];
+class Pt{
+  reset(){this.x=Math.random()*cvs.width;this.y=Math.random()*cvs.height;this.vx=(Math.random()-.5)*.5;this.vy=(Math.random()-.5)*.5;this.r=Math.random()*1.8+.4;this.a=Math.random()*.45+.1;this.c=COLS[Math.floor(Math.random()*COLS.length)]}
+  constructor(){this.reset()}
+  tick(){this.x+=this.vx;this.y+=this.vy;if(this.x<0||this.x>cvs.width||this.y<0||this.y>cvs.height)this.reset()}
+  draw(){ctx.beginPath();ctx.arc(this.x,this.y,this.r,0,Math.PI*2);ctx.fillStyle=`rgba(${this.c},${this.a})`;ctx.fill()}
+}
+for(let i=0;i<140;i++)pts.push(new Pt());
+function lines(){
+  for(let i=0;i<pts.length;i++)for(let j=i+1;j<pts.length;j++){
+    const dx=pts[i].x-pts[j].x,dy=pts[i].y-pts[j].y,d=Math.sqrt(dx*dx+dy*dy);
+    if(d<110){ctx.beginPath();ctx.moveTo(pts[i].x,pts[i].y);ctx.lineTo(pts[j].x,pts[j].y);ctx.strokeStyle=`rgba(34,211,238,${.06*(1-d/110)})`;ctx.lineWidth=.5;ctx.stroke()}
+  }
+}
+function anim(){ctx.clearRect(0,0,cvs.width,cvs.height);pts.forEach(p=>{p.tick();p.draw()});lines();requestAnimationFrame(anim)}
+anim();
+
+// typing
+const phrases=['Google Ads & PPC Expert','Meta Ads Specialist','WordPress Developer','Lead Generation Pro','CPL Optimization Expert'];
+let pi=0,ci=0,del=false;
+const tel=document.getElementById('typing');
+function type(){
+  const ph=phrases[pi];
+  tel.textContent=del?ph.slice(0,ci-1):ph.slice(0,ci+1);
+  del?ci--:ci++;
+  if(!del&&ci===ph.length){del=true;setTimeout(type,2000);return}
+  if(del&&ci===0){del=false;pi=(pi+1)%phrases.length}
+  setTimeout(type,del?45:85);
+}
+type();
+
+// skill bars
+const skO=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.querySelectorAll('.skfl').forEach(b=>b.style.width=b.dataset.w+'%')})},{threshold:.25});
+skO.observe(document.getElementById('skills'));
+
+// counters
+function runC(el){
+  const t=+el.dataset.t,pre=el.dataset.pre||'',suf=el.dataset.suf||'';
+  let c=0;const step=t/65;
+  const iv=setInterval(()=>{c=Math.min(c+step,t);el.textContent=pre+Math.floor(c)+suf;if(c>=t)clearInterval(iv)},22);
+}
+const cO=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.querySelectorAll('.counter').forEach(runC);cO.unobserve(x.target)}})},{threshold:.25});
+cO.observe(document.getElementById('results'));
+
+// testimonials
+let tIdx=0;
+const ttrack=document.getElementById('ttrack'),tcards=ttrack.querySelectorAll('.tcd'),tdotsEl=document.getElementById('tdots');
+function buildDots(){
+  const vis=innerWidth<768?1:innerWidth<1100?2:3;
+  const total=Math.max(1,tcards.length-vis+1);
+  tdotsEl.innerHTML='';
+  for(let i=0;i<total;i++){const d=document.createElement('div');d.className='tdot'+(i===tIdx?' on':'');d.onclick=()=>{tIdx=i;slide()};tdotsEl.appendChild(d)}
+}
+function slide(){
+  const vis=innerWidth<768?1:innerWidth<1100?2:3,max=Math.max(0,tcards.length-vis);
+  tIdx=Math.max(0,Math.min(tIdx,max));
+  ttrack.style.transform=`translateX(-${tIdx*(tcards[0].offsetWidth+24)}px)`;
+  document.querySelectorAll('.tdot').forEach((d,i)=>d.classList.toggle('on',i===tIdx));
+}
+function mvT(d){tIdx+=d;slide()}
+buildDots();window.addEventListener('resize',()=>{tIdx=0;buildDots();slide()});
+
+// portfolio filter
+function fp(btn,cat){
+  document.querySelectorAll('.pfb').forEach(b=>b.classList.remove('on'));
+  btn.classList.add('on');
+  document.querySelectorAll('.pc').forEach(c=>{
+    if(cat==='all'||c.dataset.c===cat){
+      c.style.display='';
+      requestAnimationFrame(()=>{c.style.transition='opacity .4s,transform .4s';c.style.opacity='0';c.style.transform='scale(.95)';
+        requestAnimationFrame(()=>{c.style.opacity='1';c.style.transform='scale(1)'})});
+    }else c.style.display='none';
+  });
+}
+
+// form
+function doSub(e){e.preventDefault();e.target.reset();const t=document.getElementById('toast');t.classList.add('on');setTimeout(()=>t.classList.remove('on'),3800)}
+</script>
+</body>
+</html>
